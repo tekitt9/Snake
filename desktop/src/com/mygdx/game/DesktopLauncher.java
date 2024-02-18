@@ -8,7 +8,7 @@ import com.mygdx.game.MyGdxGame;
 public class DesktopLauncher {
 	public static void main (String[] arg) {
 		Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
-		config.setForegroundFPS(60);
+		config.setForegroundFPS(2);
 		config.setTitle("Minesweeper2");
 //		config.setWindowIcon("");
 		config.setWindowedMode(2000, 1000);

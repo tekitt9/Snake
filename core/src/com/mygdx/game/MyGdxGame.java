@@ -11,12 +11,17 @@ import com.badlogic.gdx.utils.ScreenUtils;
 
 public class MyGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;
-	Texture img;
-	Sprite sprite;
+	Sprite head;
+	Sprite body;
+	Sprite tail;
 
 	@Override
 	public void create () {
-		img = new Texture("badlogic.jpg");
+		head = new Sprite(new Texture("head.png"), 32, 32);
+		head.setX(256);
+		body = new Sprite(new Texture("body.png"), 32, 32);
+		body.setX(32);
+		tail = new Sprite(new Texture("tail.png"), 32, 32);
 		batch = new SpriteBatch();
 		Gdx.input.setInputProcessor(new InputProcessor() {
 			@Override
@@ -70,13 +75,20 @@ public class MyGdxGame extends ApplicationAdapter {
 	public void render () {
 		ScreenUtils.clear(0, 0, 0, 1);
 		batch.begin();
-		sprite.draw(batch);
+		head.draw(batch);
+		body.draw(batch);
+		batch.draw(new Texture("body.png"), 64, 0);
+		batch.draw(new Texture("body.png"), 96, 0);
+		batch.draw(new Texture("body.png"), 128, 0);
+		batch.draw(new Texture("body1.png"), 160, 0);
+		batch.draw(new Texture("body.png"), 192, 0);
+		batch.draw(new Texture("body.png"), 224, 0);
+		tail.draw(batch);
 		batch.end();
 	}
 	
 	@Override
 	public void dispose () {
 		batch.dispose();
-		img.dispose();
 	}
 }
