@@ -1,2 +1,2 @@
 # Snake
-Gonna try to make a snake game
+Doesn't work cuz didn't do😔
